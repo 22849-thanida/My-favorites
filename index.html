@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โลกแห่งภาพยนตร์</title>
+
+    <style>
+        body {
+            font-family: "Tahoma", sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #111;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+        }
+
+        .movie-images {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .movie-images img {
+            width: 30%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            color: #222;
+        }
+
+        ul {
+            background: #eee;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .comment-box {
+            margin-top: 30px;
+            padding: 20px;
+            background: #ddd;
+            border-radius: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #111;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        .comment {
+            background: white;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border-left: 5px solid #111;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>โลกแห่งภาพยนตร์</h1>
+
+    <nav>
+        <a href="#home">หน้าแรก</a>
+        <a href="#movie">ภาพยนตร์</a>
+        <a href="#comment">ความคิดเห็น</a>
+    </nav>
+</header>
+
+
+<div class="container">
+
+<section id="home">
+
+    <h2>ภาพยนตร์คืออะไร?</h2>
+
+    <div class="movie-images">
+        <img src="https://picsum.photos/400/250?random=1" alt="ภาพยนตร์ 1">
+        <img src="https://picsum.photos/400/250?random=2" alt="ภาพยนตร์ 2">
+        <img src="https://picsum.photos/400/250?random=3" alt="ภาพยนตร์ 3">
+    </div>
+
+    <h2 id="movie">ความสำคัญของภาพยนตร์</h2>
+
+    <p>
+        ภาพยนตร์เป็นสื่อบันเทิงที่ได้รับความนิยมทั่วโลก 
+        โดยใช้ภาพ เสียง และการเล่าเรื่องเพื่อถ่ายทอดความคิด 
+        อารมณ์ และประสบการณ์ต่าง ๆ ให้กับผู้ชม
+    </p>
+
+    <p>
+        ภาพยนตร์มีหลายประเภท เช่น ภาพยนตร์แอ็กชัน 
+        ภาพยนตร์ตลก ภาพยนตร์ดราม่า และภาพยนตร์วิทยาศาสตร์ 
+        ซึ่งแต่ละประเภทมีรูปแบบการนำเสนอที่แตกต่างกัน
+    </p>
+
+    <p>
+        นอกจากความบันเทิงแล้ว ภาพยนตร์ยังสามารถสะท้อนสังคม 
+        วัฒนธรรม และแนวคิดของผู้สร้าง ทำให้ผู้ชมได้รับทั้งความรู้ 
+        และข้อคิดจากเรื่องราวที่รับชม
+    </p>
+
+
+    <h2>ประเภทภาพยนตร์ที่ได้รับความนิยม</h2>
+
+    <ul>
+        <li>ภาพยนตร์แอ็กชัน</li>
+        <li>ภาพยนตร์แฟนตาซี</li>
+        <li>ภาพยนตร์สยองขวัญ</li>
+        <li>ภาพยนตร์โรแมนติก</li>
+    </ul>
+
+</section>
+
+
+<section id="comment">
+
+<h2>ระบบแสดงความคิดเห็น</h2>
+
+<div class="comment-box">
+
+    <label>ชื่อผู้แสดงความคิดเห็น</label>
+    <input type="text" id="name" placeholder="กรอกชื่อ">
+
+    <label>ความคิดเห็น</label>
+    <textarea id="message" rows="4" placeholder="เขียนความคิดเห็น"></textarea>
+
+    <button onclick="addComment()">ส่งความคิดเห็น</button>
+
+</div>
+
+
+<div id="commentList"></div>
+
+
+</section>
+
+</div>
+
+
+
+<footer>
+
+<p>ชื่อผู้จัดทำ : นาย/นางสาว ................................</p>
+<p>ชั้นเรียน : ม. ....../......</p>
+<p>ปีการศึกษา : 2569</p>
+
+</footer>
+
+
+
+<script>
+
+function addComment(){
+
+    let name = document.getElementById("name").value;
+    let message = document.getElementById("message").value;
+
+    if(name == "" || message == ""){
+        alert("กรุณากรอกข้อมูลให้ครบ");
+        return;
+    }
+
+
+    let commentBox = document.createElement("div");
+
+    commentBox.className = "comment";
+
+    commentBox.innerHTML =
+        "<b>ชื่อ: </b>" + name +
+        "<br><b>ความคิดเห็น:</b><br>" + message;
+
+
+    let list = document.getElementById("commentList");
+
+    // เพิ่มความคิดเห็นล่าสุดไว้บนสุด
+    list.insertBefore(commentBox, list.firstChild);
+
+
+    document.getElementById("name").value = "";
+    document.getElementById("message").value = "";
+
+}
+
+</script>
+
+
+</body>
+</html>
